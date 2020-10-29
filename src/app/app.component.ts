@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'dummyApp-YTIFrameAPI';
+  showVideo = true;
 
   /* 1. Some required variables which will be used by YT API*/
   public YT: any;
@@ -36,6 +37,17 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.video = 'nRiOw3qGYq4';
     this.init();
+  }
+
+  toggleVideo() {
+    if (this.showVideo)
+      this.showVideo = false;
+    else {
+      this.showVideo = true;
+      setTimeout(() => {
+        this.init()
+      })
+    }
   }
 
   startVideo() {

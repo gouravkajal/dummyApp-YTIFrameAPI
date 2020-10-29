@@ -1,2 +1,6 @@
+<button class="primary-btn" (click)="toggleVideo()">Toggle Video</button>
+<br /><br /><br />
 
-<div id="player"></div>
+<div *ngIf="showVideo">
+    <div id="player"></div>
+</div>
